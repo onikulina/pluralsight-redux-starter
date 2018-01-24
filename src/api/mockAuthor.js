@@ -7,17 +7,23 @@ const authors = [
     {
         id: 'cory-house',
         firstName: 'Cory',
-        lastName: 'House'
+        lastName: 'House',
+        department: 'Computer Science',
+        phone: '(470) 205-4806'
     },
     {
         id: 'scott-allen',
         firstName: 'Scott',
-        lastName: 'Allen'
+        lastName: 'Allen',
+        department: 'Computer Science',
+        phone: '(774) 229-9514'
     },
     {
         id: 'dan-wahlin',
         firstName: 'Dan',
-        lastName: 'Wahlin'
+        lastName: 'Wahlin',
+        department: 'Computer Science',
+        phone: '(215) 827-2385'
     }
 ];
 
@@ -65,14 +71,10 @@ class AuthorApi {
         });
     }
 
-    static deleteAuthor(authorId) {
+    static deleteAuthor(author) {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
-                const indexOfAuthorToDelete = authors.findIndex(author => {
-                    author.id == authorId;
-                });
-                authors.splice(indexOfAuthorToDelete, 1);
-                resolve();
+                resolve(author);
             }, delay);
         });
     }
