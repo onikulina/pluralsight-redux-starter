@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import * as courseActions from '../../actions/courseActions';
 import CourseList from './CourseList';
-import {browserHistory} from 'react-router';
+import { browserHistory } from 'react-router';
 
 class CoursesPage extends React.Component {
     constructor(props, context) {
@@ -16,7 +16,7 @@ class CoursesPage extends React.Component {
     }
 
     render() {
-        const {courses} = this.props;
+        const { authors, courses } = this.props;
         return (
             <div>
                 <h1>Courses</h1>
@@ -24,7 +24,7 @@ class CoursesPage extends React.Component {
                     value="Add Course"
                     className="btn btn-primary"
                     onClick={this.redirectToAddCoursePage} />
-                <CourseList courses={courses} />
+                <CourseList authors={authors} courses={courses} />
             </div>
         );
     }
@@ -32,19 +32,21 @@ class CoursesPage extends React.Component {
 
 CoursesPage.propTypes = {
     actions: PropTypes.object.isRequired,
+    authors: PropTypes.array.isRequired,
     courses: PropTypes.array.isRequired
 };
 
 function mapStateToProps(state, ownProps) {
-  return {
-    courses: state.courses
-  };
+    return {
+        authors: state.authors,
+        courses: state.courses
+    };
 }
 
 function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(courseActions, dispatch)
-  };
+    return {
+        actions: bindActionCreators(courseActions, dispatch)
+    };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CoursesPage);
