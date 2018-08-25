@@ -26,8 +26,15 @@ const authors = [
         phone: '(215) 827-2385'
     },
     {
-        id: 'george-washington',
-        firstName: 'Geroge',
+        id: 'irina-nikulina',
+        firstName: 'Irina',
+        lastName: 'Nikulina',
+        department: 'Computer Science',
+        phone: '(215) 827-2385'
+    },
+    {
+        id: 'george-washinton',
+        firstName: 'George',
         lastName: 'Washington',
         department: 'Computer Science',
         phone: '(215) 827-2385'
