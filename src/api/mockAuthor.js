@@ -24,6 +24,13 @@ const authors = [
         lastName: 'Wahlin',
         department: 'Computer Science',
         phone: '(215) 827-2385'
+    },
+    {
+        id: 'george-washington',
+        firstName: 'Geroge',
+        lastName: 'Washington',
+        department: 'Computer Science',
+        phone: '(215) 827-2385'
     }
 ];
 
